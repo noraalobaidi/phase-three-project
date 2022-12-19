@@ -1,19 +1,23 @@
 package com.nora.project3.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Purchase {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int purchase_id;
 	
 	private int amount;
 	@ManyToOne
 	private Receipt receipt;
+	@OneToOne
 	private Product product;
 	
 	public Purchase() {
