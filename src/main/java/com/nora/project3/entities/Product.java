@@ -31,6 +31,21 @@ public class Product {
 	
 	this.category = new Category(categoryid,"");
 }
+	public Product(int product_id) {
+
+		super();
+	this.product_id = product_id;
+
+}
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}

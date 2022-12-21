@@ -14,7 +14,7 @@ public class Purchase {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int purchase_id;
 	
-	private int amount;
+	private int qty;
 	@ManyToOne
 	private Receipt receipt;
 	@OneToOne
@@ -22,12 +22,12 @@ public class Purchase {
 	
 	public Purchase() {
 	}
-	public Purchase(int purchase_id,int amount, int receiptid, int productid,int userid) {
+	public Purchase(int purchase_id,int qty, int receiptid, int productid,int userid) {
 
 		this.purchase_id = purchase_id;
-		this.amount = amount;
-		this.receipt = new Receipt(receiptid,"",Integer.parseInt(""));
-		this.product = new Product(productid,"",Float.parseFloat(""),Integer.parseInt(""));
+		this.qty = qty;
+		this.receipt = new Receipt(receiptid);
+		this.product = new Product(productid);
 	}
 	public int getPurchase_id() {
 		return purchase_id;
@@ -35,11 +35,11 @@ public class Purchase {
 	public void setPurchase_id(int purchase_id) {
 		this.purchase_id = purchase_id;
 	}
-	public int getAmount() {
-		return amount;
+	public int getQty() {
+		return qty;
 	}
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setQty(int qty) {
+		this.qty = qty;
 	}
 	public Receipt getReceipt() {
 		return receipt;

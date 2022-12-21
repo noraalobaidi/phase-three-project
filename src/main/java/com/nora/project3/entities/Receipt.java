@@ -26,6 +26,12 @@ public class Receipt {
 		this.user = new User(userid,"","","","");
 
 	}
+	public Receipt(int receipt_id) {
+
+		this.receipt_id=receipt_id;
+
+
+	}
 	public int getReceipt_id() {
 		return receipt_id;
 	}
